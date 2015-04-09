@@ -1,0 +1,8 @@
+# Default varaibles, may be overridden by depending roles.
+---
+
+# The URL to the nodejs repo
+nodejs_repo_url: "https://rpm.nodesource.com"
+
+# Placeholder list to be overridden
+nodejs_app_list: []

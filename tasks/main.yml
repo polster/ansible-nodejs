@@ -1,0 +1,17 @@
+# Installs and configures Node.js as needed.
+#
+# Parameters:
+# - nodejs_setup_script_download_file: The download location of the setup script
+---
+
+- include: RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: Darwin.yml
+  when: ansible_os_family == 'Darwin'
+
+- name: Make sure defined node modules are installed
+  npm:
+    name: "{{ item.app }}"
+    state: present
+  with_items: nodejs_app_list

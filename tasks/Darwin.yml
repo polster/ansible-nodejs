@@ -1,0 +1,19 @@
+# OSX specific tasks.
+---
+
+- name: Get homebrew bin stat
+  stat:
+    path: "/usr/local/bin/brew"
+  register: brew
+  changed_when: false
+  always_run: yes
+
+- name: Check if homebrew is installed
+  fail:
+    msg: "Home brew not found, make sure it is installed"
+  when: brew.stat.exists == False
+
+- name: Install node using brew
+  homebrew:
+    name: "node"
+    state: present

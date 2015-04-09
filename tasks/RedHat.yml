@@ -1,0 +1,10 @@
+# RedHat distro specific tasks.
+---
+
+- name: Download and run the install preparation script
+  shell: "curl -sL {{ nodejs_setup_script_download_file }} | bash -"
+
+- name: Install node
+  yum:
+    name: "nodejs"
+    state: present
