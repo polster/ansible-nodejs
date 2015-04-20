@@ -1,2 +1,6 @@
 # Variables that shall not be overridden.
 ---
+
+# The file location of the setup script used to prepare everything
+# for the nodejs install
+nodejs_setup_script_download_file: "{{ nodejs_repo_url }}/setup"

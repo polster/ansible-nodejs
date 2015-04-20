@@ -1,7 +1,4 @@
 # Installs and configures Node.js as needed.
-#
-# Parameters:
-# - nodejs_setup_script_download_file: The download location of the setup script
 ---
 
 - include: RedHat.yml
